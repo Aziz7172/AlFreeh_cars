@@ -1,0 +1,147 @@
+<!--
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ car.name }} - Details</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+</head>
+<body>
+    <h1>{{ car.name }}</h1>
+    <p>Model: {{ car.model }}</p>
+    <p>Color: {{ car.color }}</p>
+    <p>Year: {{ car.year_of_model }}</p>
+    <p>Daily price: ${{ car.daily }}</p>
+    {% if car.main_pic %}
+        <img src="{{ car.main_pic.url }}" alt="{{ car.name }}" style="max-width:300px;" />
+    {% endif %}
+    <p><a href="{% url 'cars' %}">Back to all cars</a></p>
+</body>
+</html>
+-->
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{{ car.name }} {{ car.model }} {{car.year_of_model}} - Details</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="{% url 'home' %}" class="logo">
+									<span class="symbol"><img src="{% static 'images/logo.svg' %}" alt="" /></span><span class="title">Al-Fareeh</span>								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="{% url 'home' %}">Home</a></li>
+							<li><a href="{% url 'contact' %}">Contact Us</a></li>
+							<li><a href="{% url 'cars' %}">Our Cars</a></li>
+							<li><a href="{% url 'about' %}">About</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1 style="text-align:center; margin-bottom:1.5em;">{{ car.name }} {{ car.model }} {{ car.year_of_model }} - Details</h1>
+							<div style="display:flex; flex-wrap:wrap; gap:32px; justify-content:center; align-items:flex-start;">
+								<!-- Image Gallery -->
+								<div style="display:flex; flex-direction:column; gap:12px; align-items:center; min-width:320px;">
+									{% if car.main_pic %}
+										<img src="{{ car.main_pic.url }}" alt="Main image" style="width:320px; height:220px; object-fit:cover; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);" />
+									{% endif %}
+									<div style="display:flex; gap:10px; margin-top:8px;">
+										{% if car.second_pic %}
+											<img src="{{ car.second_pic.url }}" alt="Second image" style="width:90px; height:60px; object-fit:cover; border-radius:6px; box-shadow:0 1px 6px rgba(0,0,0,0.07);" />
+										{% endif %}
+										{% if car.third_pic %}
+											<img src="{{ car.third_pic.url }}" alt="Third image" style="width:90px; height:60px; object-fit:cover; border-radius:6px; box-shadow:0 1px 6px rgba(0,0,0,0.07);" />
+										{% endif %}
+									</div>
+								</div>
+
+								<!-- Car Info Card -->
+								<div style="background:#fff; border-radius:14px; box-shadow:0 4px 24px rgba(0,0,0,0.10); padding:32px 28px; min-width:320px; max-width:400px;">
+									<h2 style="margin-top:0; margin-bottom:18px; color:#222;">{{car.name}} {{car.model}} <span style="color:#888; font-weight:normal;">({{car.year_of_model}})</span></h2>
+									<ul style="list-style:none; padding:0; margin:0 0 18px 0; font-size:1.08em; color:#444;">
+										<li><b>Year of manufacture:</b> {{car.year_of_sign}}</li>
+										<li><b>Color:</b> {{car.color}}</li>
+									</ul>
+									<div style="margin-bottom:12px;">
+										<span style="font-size:1.2em; color:#1a8917; font-weight:bold;">${{car.daily}}</span> <span style="color:#888;">/ day</span>
+									</div>
+									<div style="color:#555;">
+										Get it for <b>${{car.weekly}}</b> per week
+										<span style="color:#e74c3c; font-size:0.98em;">
+											(Save ${{ weekly_discount }} vs ${{ daily7 }} for 7 days)
+										</span>
+										<br>
+										<b>${{car.monthly}}</b> per month
+										<span style="color:#e67e22; font-size:0.98em;">
+											(Save ${{ monthly_discount }} vs ${{ daily30 }} for 30 days)
+										</span>,<br>
+										<b>${{car.yearly}}</b> per year
+										<span style="color:#2980b9; font-size:0.98em;">
+											(Save ${{ yearly_discount }} vs ${{ daily365 }} for 365 days)
+										</span>.
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="tel:+96872244317" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="http://wa.me/+96877457825" class="icon brands style2 fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+									<li><a href="mailto:al.loock1983@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<section>
+							    <h2>Our Location</h2>
+							    <p>Muscat, Oman</p>
+							    <a href="https://maps.app.goo.gl/c3VzQ9SW8A7J83QD7" target="_blank">View on Google Maps</a>
+							</section>
+						</div>
+					</footer>
+
+			</div>
+
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+
+	</body>
+</html>

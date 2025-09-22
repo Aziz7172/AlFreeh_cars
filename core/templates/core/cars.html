@@ -1,0 +1,114 @@
+
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Our Cars - Al-Fareeh Trading and Investment Company L.L.C</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="{% url 'home' %}" class="logo">
+									<span class="symbol"><img src="{% static 'images/logo.svg' %}" alt="" /></span><span class="title">Al-Fareeh</span>
+								</a>
+								<form method="get" action="" style="display: flex; flex-direction: row; gap: 8px; align-items: center;">
+									<input type="text" name="search" id="search" placeholder="Search a car" value="{{ search|default:'' }}" />
+								</form>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="{% url 'home' %}">Home</a></li>
+							<li><a href="{% url 'contact' %}">Contact Us</a></li>
+							<li><a href="{% url 'cars' %}">Our Cars</a></li>
+							<li><a href="{% url 'about' %}">About</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>Our Cars</h1>
+								<p>Browse our wide selection of quality vehicles and choose the perfect car for your journey.</p>
+							</header>
+							<section class="tiles">
+								{% if cars %}
+									{% for car in cars %}
+									<article class="style1">                                    
+										<span class="image">
+											{% if car.main_pic %}
+												<img src="{{ car.main_pic.url }}" alt="{{ car.name }}" />
+											{% else %}
+												<img src="{% static 'images/no-image.png' %}" alt="No image available" />
+											{% endif %}
+										</span>
+										<a href="{% url 'car_detail' car.id %}">
+											<h2>{{ car.name }}</h2>
+											<p>{{car.model}} {{car.year_of_model}}</p>
+											<div class="content">
+												<p>Only for {{car.daily}}$ per day.</p>
+											</div>
+										</a>
+									</article>
+									{% endfor %}
+								{% else %}
+									<p style="padding:2em; text-align:center; color:#888;">No cars found matching your search.</p>
+								{% endif %}
+							</section>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+								<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="tel:+96872244317" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="http://wa.me/+96877457825" class="icon brands style2 fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+									<li><a href="mailto:al.loock1983@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<section>
+							    <h2>Our Location</h2>
+							    <p>Muscat, Oman</p>
+							    <a href="https://maps.app.goo.gl/c3VzQ9SW8A7J83QD7" target="_blank">View on Google Maps</a>
+							</section>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>

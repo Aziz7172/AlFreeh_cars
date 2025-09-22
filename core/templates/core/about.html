@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>About Us - Al-Fareeh Trading and Investment Company L.L.C</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="{% url 'home' %}" class="logo">
+									<span class="symbol"><img src="{% static 'images/logo.svg' %}" alt="" /></span><span class="title">Al-Fareeh</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="{% url 'home' %}">Home</a></li>
+							<li><a href="{% url 'contact' %}">Contact Us</a></li>
+							<li><a href="{% url 'cars' %}">Our Cars</a></li>
+							<li><a href="{% url 'about' %}">About</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>About Us</h1>
+							<p>We are pleased to introduce ourselves as one of the leading car rental companies in the Sultanate of Oman. We have a wide range of vehicles to meet your needs, whether you require a car for business or leisure purposes.</p>
+							<p>Our fleet includes economy cars, luxury vehicles, SUVs, and vans, all of which are well-maintained and regularly serviced to ensure your safety and comfort. We offer competitive rates and flexible rental options to suit your budget and schedule.</p>
+							<p>At Al-Fareeh Trading and Investment Company L.L.C, we pride ourselves on our excellent customer service. Our friendly and knowledgeable staff are always available to assist you with your rental needs and provide you with any information you may require about our vehicles or services.</p>
+							<p>We also offer additional services such as airport transfers, chauffeur services, and long-term rentals. Our goal is to make your rental experience as smooth and hassle-free as possible.</p>
+							<p>Thank you for considering Al-Fareeh Trading and Investment Company L.L.C for your car rental needs. We look forward to serving you and providing you with a memorable rental experience in the beautiful Sultanate of Oman.</p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="tel:+96872244317" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="http://wa.me/+96877457825" class="icon brands style2 fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+									<li><a href="mailto:al.loock1983@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<section>
+							    <h2>Our Location</h2>
+							    <p>Muscat, Oman</p>
+							    <a href="https://maps.app.goo.gl/c3VzQ9SW8A7J83QD7" target="_blank">View on Google Maps</a>
+							</section>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>

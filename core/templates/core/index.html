@@ -1,0 +1,93 @@
+
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Al-Fareeh Trading and Investment Company L.L.C</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="{% url 'home' %}" class="logo">
+									<span class="symbol"><img src="{% static 'images/logo.svg' %}" alt="" /></span><span class="title">Al-Fareeh</span>								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="{% url 'home' %}">Home</a></li>
+							<li><a href="{% url 'contact' %}">Contact Us</a></li>
+							<li><a href="{% url 'cars' %}">Our Cars</a></li>
+							<li><a href="{% url 'about' %}">About</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Al-Fareeh Trading and Investment Company L.L.C</h1>
+							<p>Welcome to Al-Fareeh Trading and Investment Company L.L.C. We are dedicated to providing reliable car rental services with a focus on customer satisfaction, quality vehicles, and competitive prices. Our experienced team is here to help you find the perfect car for your needs, whether for business or leisure. Thank you for choosing us as your trusted partner on the road.</p>
+
+
+								<p><a href="{% url 'cars' %}"><h1 style="text-align: center;">Explore our cars</h1></a></p>
+							</div>
+					</div>
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="tel:+96872244317" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="http://wa.me/+96877457825" class="icon brands style2 fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+									<li><a href="mailto:al.loock1983@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<section>
+							    <h2>Our Location</h2>
+							    <p>Muscat, Oman</p>
+							    <a href="https://maps.app.goo.gl/c3VzQ9SW8A7J83QD7" target="_blank">View on Google Maps</a>
+							</section>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
+
+
+
+<!--	Al-Fareeh Trading and Investment Company L.L.C.		-->
+<!--				al.loock1983@gmail.com					-->
+<!--					+968 72244317						-->
+<!--					+968 77457825						-->
